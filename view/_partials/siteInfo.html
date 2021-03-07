@@ -1,0 +1,27 @@
+<!-- 网站信息页 -->
+
+<aside id="know-more-section" class="flex-center">
+{{ if user }}
+    <!-- 已登陆显示这里 -->
+    <div class="card text-center">
+        <div class="card-header">
+          Info
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"> {{ user.nickname }} </h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="/logout" class="btn btn-primary">退出登陆</a>
+        </div>
+        <div class="card-footer text-muted">
+          上次登陆： {{ user.last_modified_time }}
+        </div>
+      </div>
+
+<!-- 未登陆显示这里 -->
+{{ else }}
+    <a class="btn btn-primary navbar-btn" href="/login">登录</a>
+    <a class="btn btn-success navbar-btn" href="/register">注册</a>
+{{ /if }}
+     
+      
+</aside>

@@ -1,0 +1,636 @@
+<!-- 依赖 -->
+{{extend './_layouts/home.html'}}
+
+<!-- 加载页面 标题 -->
+{{block 'title'}}{{我的开源社}}{{/block}}
+
+<!-- 主体内容 -->
+{{block 'body'}}
+<main>
+  <!-- 内容区 -->
+  <div id="main-container">
+
+    <!-- 社区 -->
+    <div class="window" id="services">
+      <!-- 顶部 -->
+      <div class="window-header">
+        <div class="window-title">话社——分享资源，技术交流，最新资讯</div>
+        <div class="clearfix float-right window-header-btns">
+          {{ if user }}
+            <a href="/logout" class="btn btn-primary float-left">退出</a>
+            <a href="javascript::;" class='btn float-left usr-history'>历史</a>
+            
+            <a href="javascript::;" class='btn float-left '>举报</a>
+            
+          {{ else }}
+            <a href="/new" class='btn float-left'>投稿</a>
+            <a href="/login" class='btn float-left'>登陆</a>
+            <a href="/register" class='btn float-left '>注册</a>
+          {{ /if }}
+          
+          <div class="float-left pointer window-header-btn window-expand-btn"> <i class="lni lni-frame-expand"></i> </div>
+          <div class="float-left pointer window-header-btn window-close-btn"> <a href="#"><i class="lni lni-close"></i></a> </div>
+        </div>
+      </div>
+      <!-- 内容区 -->
+      <div class="window-body backdrop" data-simplebar>
+        <div class="window-content">
+
+          <!-- 热门栏 -->
+          <div id="services-body">
+            <div class="clearfix" id="services-body-inner">
+
+              <div class="float-left service">
+                <div class="service-body">
+                  <!-- 标题 -->
+                  <div class="service-icon"> <i class="lni lni-code-alt"></i> </div>
+                  <div class="service-name">
+                    <span class="badge badge-danger">Top</span>
+                    <a href="javascript::;" class="artical-name"> Web designWeb designWeb design </a> 
+                  </div>
+                  
+                  <div class="service-description line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  <!-- 作者信息 -->
+                  <div class=" author-info">
+                    <a href="javascript::;"> xxx </a> <span class="font-italic">  TIME</span>
+                    <i class="lni lni-eye"></i> <span class="font-italic">  1k</span>
+                  </div> 
+                </div>
+              </div>
+              
+              <div class="float-left service">
+                <div class="service-body">
+                  <!-- 标题 -->
+                  <div class="service-icon"> <i class="lni lni-code-alt"></i> </div>
+                  <div class="service-name">
+                    <span class="badge badge-danger">Top</span>
+                    <a href="javascript::;"> Web designWeb designWeb design </a> 
+                  </div>
+                  
+                  <div class="service-description line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  <!-- 作者信息 -->
+                  <div class=" author-info">
+                    <a href="javascript::;"> xxx </a> <span class="font-italic">  TIME</span>
+                  </div> 
+                </div>
+              </div>
+
+              <div class="float-left service">
+                <div class="service-body">
+                  <!-- 标题 -->
+                  <div class="service-icon"> <i class="lni lni-code-alt"></i> </div>
+                  <div class="service-name">
+                    <span class="badge badge-danger">Top</span>
+                    <a href="javascript::;"> Web designWeb designWeb design </a> 
+                  </div>
+                  
+                  <div class="service-description line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+                  <!-- 作者信息 -->
+                  <div class=" author-info">
+                    <a href="javascript::;"> xxx </a> <span class="font-italic">  TIME</span>
+                  </div> 
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 话题栏 -->
+          <div id="service-plans">
+            <div id="plans-heading">叽叽歪歪</div>
+            
+            <!-- 投稿页 -->
+            <div class="clearfix" id="service-plans-body">
+              <!-- 右侧资讯 -->
+              <div class="card float-right col-sm-5">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title">News——最新资讯</h5>
+
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <!-- 内容 -->
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">An item</li>
+                  <li class="list-group-item">A second item</li>
+                  <li class="list-group-item">A third item</li>
+                </ul>
+
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+
+              <!-- 发言 -->
+              {{ each titles }}
+              <div class="media position-relative social-bar col-sm-7">
+                <div class="media-body">
+                  <h5 class="mt-0">{{ $value.titleName }}</h5>
+                  <a href="javascript::;" class="float-right artical-name">&nbsp;&nbsp;查看详情 </a>
+                  <div class="float-right">
+                    <i class="lni lni-eye"></i> <span class="font-italic">  1k </span>
+                  </div>
+                  
+                  <a href="javascript::;"> xxx </a> <span class="font-italic">  TIME </span>
+                  <span> </span>
+                  <p>This is some placeholder content for the media object. It is ontent
+                     would look like, and we're using it here to give the component a bit
+                      of body and size.</p>
+                </div>
+              </div>
+              {{ /each }}
+              
+              <div class="media position-relative social-bar col-sm-7">
+                <div class="media-body">
+                  <h5 class="mt-0">Media with stretched link</h5>
+                  <a href="#" class="float-right">查看详情</a>
+                  <a href="javascript::;"> xxx </a> <span class="font-italic">  TIME</span>
+                  <span> </span>
+                  <p>This is some placeholder content for the media object. It is ontent
+                     would look like, and we're using it here to give the component a bit
+                      of body and size.</p>
+                </div>
+              </div>
+
+              <!-- 分页按钮 -->
+              <nav aria-label="Page navigation example" class="">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- 详情页面 -->
+      <div class="window-body backdrop service-show" data-simplebar>
+        <div class="window-content">
+
+          <!-- 内容区 -->
+          <blockquote class="blockquote text-center">
+            
+            <p class="mb-0">A well-known quote, contained in a blockquote element.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+            <a href="javascript::;" class='btn float-left back-artical'>返回</a>
+
+               
+          
+        </div>
+      </div>
+
+      <!-- 历史投稿 -->
+      <div class="window-body backdrop usr-history-info" data-simplebar>
+        <div class="window-content">
+
+          <!-- 内容区 -->
+          <blockquote class="blockquote text-center">
+            
+            <p class="mb-0">A well-known quote, contained in a blockquote element.</p>
+            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+            <a href="javascript::;" class='btn float-left history-info'>返回</a>
+
+               
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 项目列表 -->
+    <!-- <div class="window" id="education">
+      
+      <div class="window-header">
+        <div class="window-title">项目列表</div>
+        <div class="clearfix float-right window-header-btns">
+          <a href="javascript::;" class='btn float-left'>Add</a>
+          <a href="javascript::;" class='btn float-left '>Share</a>
+          <div class="float-left pointer window-header-btn window-expand-btn"> <i class="lni lni-frame-expand"></i> </div>
+          <div class="float-left pointer window-header-btn window-close-btn"> <a href="#"><i class="lni lni-close"></i></a> </div>
+        </div>
+      </div>
+     
+      <div class="window-body backdrop" data-simplebar>
+        <div class="window-content">
+          
+          <div class="accordion" id="accordionExample">
+           
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    web静态网页
+                    <span class="badge badge-secondary">5</span>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <a href="javascript::;" class="">demo1demo1demo1demo1demo1</a><br>
+                      <span class="demo-info"> 简介： <span>  </span> </span>
+                      <a href="javascript::;" class='btn float-right skill-link' > 删除 </a>
+                      <a href="javascript::;" class='btn float-right skill-link'> 编辑 </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="javascript::;" class="">demo1demo1demo1demo1demo1</a><br>
+                      <span class="demo-info"> 简介： <span>  </span> </span>
+                      <a href="javascript::;" class='btn float-right skill-link'> 删除 </a>
+                      <a href="javascript::;" class='btn float-right skill-link'> 编辑 </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="javascript::;" class="">demo1demo1demo1demo1demo1</a><br>
+                      <span class="demo-info"> 简介： <span>  </span> </span>
+                      <a href="javascript::;" class='btn float-right skill-link'> 删除 </a>
+                      <a href="javascript::;" class='btn float-right skill-link'> 编辑 </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="javascript::;" class="">demo1demo1demo1demo1demo1</a><br>
+                      <span class="demo-info"> 简介： <span>  </span> </span>
+                      <a href="javascript::;" class='btn float-right skill-link'> 删除 </a>
+                      <a href="javascript::;" class='btn float-right skill-link'> 编辑 </a>
+                    </li>
+                    <li class="list-group-item">
+                      <a href="javascript::;" class="">demo1demo1demo1demo1demo1</a><br>
+                      <span class="demo-info"> 简介： <span>  </span> </span>
+                      <a href="javascript::;" class='btn float-right skill-link'> 删除 </a>
+                      <a href="javascript::;" class='btn float-right skill-link'> 编辑 </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    web动态网页
+                    <span class="badge badge-secondary">3</span>
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  Some placeholder content for the second accordion panel. This panel is hidden by default.
+                </div>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Demo
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                  And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+    </div> -->
+
+    <!-- 笔记博客 -->
+    <!-- <div class="window" id="portfolio">
+      <div class="window-header">
+        <div class="window-title">我的笔记——智能分类</div>
+        <div class="clearfix float-right window-header-btns">
+          <a href="javascript::;" class='btn float-left'>上传</a>
+          <a href="javascript::;" class='btn float-left code-bility'> <i class="lni lni-code"></i> </a>
+          <div class="float-left pointer window-header-btn window-expand-btn"> <i class="lni lni-frame-expand"></i> </div>
+          <div class="float-left pointer window-header-btn window-close-btn"> <a href="#"><i class="lni lni-close"></i></a> </div>
+        </div>
+      </div>
+      
+      <div class="window-body backdrop" data-simplebar>
+        <div class="window-content">
+          <div id="portfolio-tabs">
+            <div class="portfolio-tab active" data-filter="*">所有</div>
+            <div class="portfolio-tab" data-filter=".portfolio-creative">nodejs</div>
+            <div class="portfolio-tab" data-filter=".portfolio-design">Nginx</div>
+            <div class="portfolio-tab" data-filter=".portfolio-minimal">Linux</div>
+            <div class="portfolio-tab" data-filter=".portfolio-minimal">Python</div>
+            <div class="portfolio-tab" data-filter=".portfolio-other">其他</div>
+          </div>
+          <div id="portfolio-content">
+            <div class="clearfix" id="portfolio-body">
+
+              <div class="card float-left portfolio-item portfolio-design portfolio-minimal">
+                <div class="card-body">
+                  <a href="javascript::;" class='btn float-right'>查看详情</a>
+                  <h6 class="card-title">Card title</h6>
+                  
+                  This is some text within a card body.This is some t
+                  ext within a card body.This is some text within a card body.This is some text within a card body.
+                </div>
+              </div>
+
+              <div class="card float-left portfolio-item portfolio-creative portfolio-minimal">
+                <div class="card-body">
+                  <a href="javascript::;" class='btn float-right'>查看详情</a>
+                  <h6 class="card-title">Card title</h6>
+                  
+                  This is some text within a card body.This is some t
+                  ext within a card body.This is some text within a card body.This is some text within a card body.
+                </div>
+              </div>
+
+              <div class="card float-left portfolio-item portfolio-minimal portfolio-minimal">
+                <div class="card-body">
+                  <a href="javascript::;" class='btn float-right'>查看详情</a>
+                  <h6 class="card-title">Card title</h6>
+                  
+                  This is some text within a card body.This is some t
+                  ext within a card body.This is some text within a card body.This is some text within a card body.
+                </div>
+              </div>
+
+              <div class="card float-left portfolio-item portfolio-other portfolio-minimal">
+                <div class="card-body">
+                  <a href="javascript::;" class='btn float-right'>查看详情</a>
+                  <h6 class="card-title">其他的</h6>
+                  
+                  This is some text within a card body.This is some t
+                  ext within a card body.This is some text within a card body.This is some text within a card body.
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="window-body backdrop notes-info" data-simplebar>
+        <div class="window-content">
+          <a href="javascript::;" class='btn back-notes'>返回</a>
+          <a href="javascript::;" class='btn float-right'> 添加 </a>
+          <h2 class='h2'>我的技能</h2>
+          
+          {{ each users }}
+          <div class="skill">
+            <div class="skill-info">
+              <div class="skill-name">
+                <span> {{ $value.skill.name }} </span>
+                <a href="javascript::;" class='btn float-right skill-link'>删除</a>
+                <a href="javascript::;" class='btn float-right skill-link'>编辑</a>
+              </div>
+            </div>
+            <div class="skill-meter" style="width: 50%"> <span>{{ $value.skill.Proficiency }}</span> </div> 
+          </div>
+          {{ /each }}
+          
+          <div class="skill">
+            <div class="skill-info">
+              <div class="skill-name">
+                <span>HTML5</span>
+                <a href="javascript::;" class='btn float-right skill-link'>删除</a>
+                <a href="javascript::;" class='btn float-right skill-link'>编辑</a>
+              </div>
+            </div>
+            
+            <div class="skill-meter" style="width: 50%"> <span>50%</span> </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div> -->
+
+    <!-- 资源共享 -->
+    <!-- <div class="window" id="clients">
+      
+      <div class="window-header">
+        <div class="window-title">站点资源</div>
+        <div class="clearfix float-right window-header-btns">
+          <div class="float-left pointer window-header-btn window-expand-btn"> <i class="lni lni-frame-expand"></i> </div>
+          <div class="float-left pointer window-header-btn window-close-btn"> <a href="#"><i class="lni lni-close"></i></a> </div>
+        </div>
+      </div>
+      
+      <div class="window-body backdrop" data-simplebar>
+        <div class="window-content">
+          <div id="clients-content">
+            <div id="clients-section-heading">分类资源——FreePiao</div>
+            <div class="clearfix" id="clients-body">
+              <div class="float-left client"> <a href="javascript::;" class="client-logo src-name"> <img src="../public/img/clients/coca-cola.svg" alt="Coca Cola">
+                <div class="client-display-link">最全的xxx</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://envato.com" target="_blank" class="client-logo"> <img src="../public/img/clients/envato.svg" alt="Envato">
+                <div class="client-display-link">https://envato.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://google.com" target="_blank" class="client-logo"> <img src="../public/img/clients/google.svg" alt="Google">
+                <div class="client-display-link">https://google.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://www.mclaren.com" target="_blank" class="client-logo"> <img src="../public/img/clients/mclaren.svg" alt="Mclaren">
+                <div class="client-display-link">https://www.mclaren.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://firebase.google.com" target="_blank" class="client-logo"> <img src="../public/img/clients/firebase.svg" alt="Firebase">
+                <div class="client-display-link">https://firebase.google.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://wordpress.com" target="_blank" class="client-logo"> <img src="../public/img/clients/wordpress.svg" alt="WordPress">
+                <div class="client-display-link">https://wordpress.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://spotify.com" target="_blank" class="client-logo"> <img src="../public/img/clients/spotify.svg" alt="Spotify">
+                <div class="client-display-link">https://spotify.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://airbnb.com/" target="_blank" class="client-logo"> <img src="../public/img/clients/airbnb.svg" alt="Airbnb">
+                <div class="client-display-link">http://airbnb.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://www.rolls-royce.com" target="_blank" class="client-logo"> <img src="../public/img/clients/rolls-royce.svg" alt="Rolls Royce">
+                <div class="client-display-link">https://www.rolls-royce.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://www.spacex.com" target="_blank" class="client-logo"> <img src="../public/img/clients/spacex.svg" alt="SpaceX">
+                <div class="client-display-link">https://www.spacex.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://www.zara.com" target="_blank" class="client-logo"> <img src="../public/img/clients/zara.svg" alt="Zara">
+                <div class="client-display-link">https://www.zara.com</div>
+                </a> </div>
+              <div class="float-left client"> <a href="https://www.xbox.com" target="_blank" class="client-logo"> <img src="../public/img/clients/xbox.svg" alt="Xbox">
+                <div class="client-display-link">https://www.xbox.com</div>
+                </a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="window-body backdrop src-info" data-simplebar>
+        <div class="window-content">
+          <div id="latest-blog-post-cover">
+            
+            <a href="javascript::;" class="btn src-back"> 返回 </a>
+            <div id="latest-blog-post">
+              <div id="latest-blog-post-text">
+                <div id="latest-blog-post-heading">Best trip plan for visiting gorgeous places in Canada during winter season</div>
+                <a href="#" id="latest-blog-post-link">Read<i class="lni lni-arrow-right"></i></a> </div>
+            </div>
+          </div>
+          <div id="popular-blog-post-cover">
+            <div class="blog-heading">Popular posts</div>
+            <div class="clearfix">
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-7.jpg" alt="Guidelines to become a power elite author on Themeforest"> </div>
+                <div class="popular-post-title line-clamp">Guidelines to become a power elite author on Themeforest</div>
+                </a> </div>
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-8.jpg" alt="Blog post thumbnail"> </div>
+                <div class="popular-post-title line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </a> </div>
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-9.jpg" alt="Blog post thumbnail"> </div>
+                <div class="popular-post-title line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </a> </div>
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-10.jpg" alt="Blog post thumbnail"> </div>
+                <div class="popular-post-title line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </a> </div>
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-11.jpg" alt="Blog post thumbnail"> </div>
+                <div class="popular-post-title line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </a> </div>
+              <div class="float-left popular-blog-post-col"> <a href="#" class="popular-blog-post">
+                <div class="popular-post-thumbnail"> <img src="../public/img/blog/blog-12.jpg" alt="Blog post thumbnail"> </div>
+                <div class="popular-post-title line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                </a> </div>
+            </div>
+          </div>
+          <div class="clearfix" id="blog-body">
+            <div class="blog-heading">Other awesome posts</div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-1.jpg" alt="10 dishes that you must try at home"> </div>
+              <div class="blog-post-title line-clamp">10 dishes that you must try at home</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-2.jpg" alt="Things that you should know before visiting Switzerland"> </div>
+              <div class="blog-post-title line-clamp">Things that you should know before visiting Switzerland</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-3.jpg" alt="How to make travelling a full-time job?"> </div>
+              <div class="blog-post-title line-clamp">How to make travelling a full-time job?</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-4.jpg" alt="Acoustic guitar tips for beginners"> </div>
+              <div class="blog-post-title line-clamp">Acoustic guitar tips for beginners</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-5.jpg" alt="Social media marketing hacks"> </div>
+              <div class="blog-post-title line-clamp">Social media marketing hacks</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+            <div class="float-left blog-post-col"> <a href="#" class="blog-post">
+              <div class="blog-post-thumbnail"> <img src="../public/img/blog/blog-6.jpg" alt="Food experiments at home for foodies"> </div>
+              <div class="blog-post-title line-clamp">Food experiments at home for foodies</div>
+              <div class="blog-post-excerpt line-clamp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+              </a> </div>
+          </div>
+          <div id="blog-pagination"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+
+  <!-- 联系 -->
+  <div id="contact">
+    <div id="contact-body"> 
+
+      <a href="https://themeforest.net/user/thewebcross/portfolio" target="_blank" class="contact-btn"> 
+        <i class="lni lni-heart-filled"></i>
+        <div class="contact-btn-bg gradient-5"></div>
+      </a> 
+
+      <a href="#" target="_blank" class="contact-btn"> 
+        <i class="lni lni-briefcase"></i>
+        <div class="contact-btn-bg gradient-10"></div>
+      </a> 
+
+      <a href="#" target="_blank" class="contact-btn"> 
+        <i class="lni lni-twitter-original"></i>
+       <div class="contact-btn-bg gradient-4"></div>
+      </a> 
+
+      <a href="#" target="_blank" class="contact-btn"> 
+        <i class="lni lni-facebook-original"></i>
+       <div class="contact-btn-bg gradient-2"></div>
+      </a>
+
+      <div id="contact-email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f3999c9b9ddd979c96b39a9d959cdd909c9e">[email&#160;protected]</a></div>
+      <a href="#" id="contact-close-btn"> <i class="lni lni-close"></i> </a> </div>
+  </div>
+
+  <!-- 底部导航条 -->
+  <nav id="main-nav">
+    <div id="main-nav-body">
+      <div id="main-nav-tb-container">
+        <div id="main-nav-tb" class="container backdrop">
+          <div class="row" id="main-nav-links"> 
+
+            <a class="col btn" href="#services"> 
+              <i class="lni lni-briefcase"></i>
+              <span>话社资讯</span> 
+            </a> 
+
+            <!-- <a class="col btn" href="#education"> 
+              <i class="lni lni-graduation"></i>
+              <span>开源项目</span> 
+            </a> 
+
+            <a class="col btn" href="#portfolio"> 
+              <i class="lni lni-pallet"></i> 
+              <span>笔记博客</span> 
+            </a> 
+
+            <a class="col btn" href="#clients"> 
+              <i class="lni lni-consulting"></i> 
+              <span>共享资源</span> 
+            </a>  -->
+
+            <a class="col btn" href="#contact"> 
+              <i class="lni lni-envelope"></i> 
+              <span>Contact me</span> 
+            </a> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</main>
+
+<!-- 网站信息 -->
+{{block 'aside1'}}{{/block}}
+
+{{/block}}
+
+{{block 'aside'}}{{/block}}
